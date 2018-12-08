@@ -135,7 +135,7 @@ public class HuffProcessor {
 	}
 	private HuffNode readTreeHeader(BitInputStream in) {
 		int bits = in.readBits(BITS_PER_INT);
-		if (bits!=- HUFF_TREE) {
+		if (bits == -1) {
 			throw new HuffException("Illegal header starts with " +bits);
 		}
 		if (bits==0) {
