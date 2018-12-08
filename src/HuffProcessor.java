@@ -156,8 +156,9 @@ public class HuffProcessor {
 	               throw new HuffException("bad input, no PSEUDO_EOF");
 	           }
 	           else { 
-	               if (bits == 0) current = current.myLeft; 
-	               else if (current.myLeft == null && current.myRight == null) {
+	               if (bits == 0) current = current.myLeft;
+	               else current = current.myRight;
+	               if (current.myLeft == null && current.myRight == null) {
 	                   if ( current.myValue == PSEUDO_EOF) 
 	                       break;  
 	                   else {
